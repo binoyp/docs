@@ -16,13 +16,25 @@
           {
             "group": "Loading Computer Onboard",
             "pages": [
-              "solutions/loading-computer-onboard/overview"
+              "solutions/loading-computer-onboard/overview",
+              {
+                "group": "Modules",
+                "pages": [
+                  "solutions/modules/basic"
+                ]
+              }
             ]
           },
           {
             "group": "Loading Computer Shore",
             "pages": [
-              "solutions/loading-computer-shore/overview"
+              "solutions/loading-computer-shore/overview",
+              {
+                "group": "Modules",
+                "pages": [
+                  "solutions/modules/basic"
+                ]
+              }
             ]
           }
         ]

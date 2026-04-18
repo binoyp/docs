@@ -1,0 +1,144 @@
+---
+title: "Basic Module"
+description: "Loading condition definition, intact stability, and longitudinal strength calculations"
+---
+
+The Basic module is the foundation of every SecureLoad loading computer. It defines the vessel's loading condition and performs the two core compliance checks required for every cargo operation — intact stability and longitudinal strength.
+
+---
+
+## Loading Condition
+
+A loading condition in SecureLoad is a complete snapshot of the vessel's weight distribution at a given moment. It is built from four categories of items:
+
+| Category | Description |
+|---|---|
+| **Lightweight** | The vessel's own structural weight — fixed, taken from the approved lightweight survey |
+| **Cargo** | All cargo items placed in holds, on deck, or in specific stowage positions |
+| **Tanks** | Ballast water, fuel oil, diesel oil, fresh water, and other liquid loads with their filling levels |
+| **Constants** | Stores, provisions, crew and effects, spare parts, and other deadweight items not elsewhere accounted for |
+
+The sum of all four categories gives the **displacement** at that condition. Positions (longitudinal, transverse, vertical centres of gravity) are calculated for each item and combined to produce the overall centre of gravity **G** of the vessel.
+
+---
+
+## Intact Stability
+
+Intact stability assessment checks whether the vessel, in its current loading condition, meets the mandatory stability criteria imposed by the IMO Intact Stability Code and the vessel's class-approved loading manual.
+
+### Hydrostatic Calculations
+
+From the displacement and trim, SecureLoad reads the vessel's hydrostatic tables to determine:
+
+| Parameter | Symbol | Description |
+|---|---|---|
+| Draught (fwd, mid, aft) | T | Forward, midship, and aft draught |
+| Displacement | Δ | Total mass of displaced water |
+| Centre of Buoyancy | KB | Vertical centre of buoyancy |
+| Metacentric Radius | BM | Distance from centre of buoyancy to transverse metacentre |
+| Metacentric Height | GM | Measure of initial transverse stability; GM = KB + BM − KG |
+
+### Free Surface Correction
+
+For every partially filled tank, SecureLoad computes the free surface moment and applies the corresponding reduction to GM:
+
+> **GM_effective = GM_solid − Σ (free surface moments) / Δ**
+
+This correction is applied before any criteria are evaluated.
+
+### GZ Curve
+
+The righting lever **GZ** is computed at heel angles from 0° to 90° (or beyond, depending on vessel geometry). The curve describes the vessel's ability to return to upright after being heeled by an external force.
+
+<Frame>
+  <img src="/images/gz-curve-placeholder.png" alt="GZ Righting Lever Curve" />
+</Frame>
+
+Key values read from the GZ curve:
+
+| Parameter | Description |
+|---|---|
+| **GM** | Slope of the GZ curve at 0° (initial stability) |
+| **GZ_max** | Maximum righting lever — the peak of the curve |
+| **Angle of GZ_max** | Heel angle at which the maximum GZ occurs |
+| **Angle of Vanishing Stability** | Heel angle at which GZ returns to zero |
+| **Area 0°–30°** | Area under the GZ curve from 0° to 30° heel |
+| **Area 0°–40°** | Area under the GZ curve from 0° to 40° heel |
+| **Area 30°–40°** | Incremental area between 30° and 40° heel |
+
+### Criteria Checks
+
+SecureLoad evaluates the condition against the applicable stability criteria. Results are displayed as pass/fail with the calculated value alongside the required limit.
+
+**IMO Intact Stability Code (2008 IS Code) — General Criteria:**
+
+| Criterion | Limit |
+|---|---|
+| Area 0°–30° | ≥ 0.055 m·rad |
+| Area 0°–40° | ≥ 0.090 m·rad |
+| Area 30°–40° | ≥ 0.030 m·rad |
+| GZ at 30° heel | ≥ 0.200 m |
+| Angle of GZ_max | ≥ 25° |
+| GM₀ (initial metacentric height) | ≥ 0.150 m |
+
+Additional criteria — such as the **weather criterion**, grain stability requirements, or vessel-type-specific rules — are evaluated by the relevant optional modules.
+
+---
+
+## Longitudinal Strength
+
+Longitudinal strength assessment verifies that the forces acting along the length of the hull remain within the class-approved permissible limits at all cross-sections of the vessel.
+
+### Weight and Buoyancy Distribution
+
+SecureLoad computes the distribution of:
+- **Weight** — mass per unit length along the vessel, contributed by lightweight, cargo, tanks, and constants
+- **Buoyancy** — upward hydrostatic force per unit length, derived from the vessel's form at the current draught and trim
+
+### Load Curve
+
+The difference between the weight and buoyancy distributions gives the **load curve** (net vertical force per unit length along the ship's length). Integrating the load curve yields:
+
+| Derived Quantity | Description |
+|---|---|
+| **Shear Force (SF)** | Cumulative vertical force at each cross-section |
+| **Bending Moment (BM)** | Cumulative moment at each cross-section — sagging (hull bends downward) or hogging (hull bends upward) |
+
+### Permissible Limits
+
+The class-approved permissible shear force and bending moment values are stored in the vessel's SecureLoad database. At every cross-section, the calculated value is compared against the permissible limit:
+
+- Values below the limit: **pass**
+- Values at or above the limit: **fail** — displayed with the percentage of utilisation
+
+<Warning>
+  Exceeding the permissible shear force or bending moment limits means the hull girder is being overstressed. A loading condition that fails longitudinal strength checks must not be executed.
+</Warning>
+
+---
+
+## Draughts & Deadweight
+
+In addition to stability and strength, the Basic module reports the complete draught summary:
+
+| Output | Description |
+|---|---|
+| **Draught Forward** | Calculated draught at the forward perpendicular |
+| **Draught Aft** | Calculated draught at the aft perpendicular |
+| **Draught Midship** | Calculated draught amidships |
+| **Trim** | Difference between aft and forward draughts (positive trim = trim by stern) |
+| **Heel** | Transverse inclination of the vessel |
+| **Displacement** | Total mass of the vessel in the current condition |
+| **Deadweight** | Displacement minus lightweight — the total payload carried |
+| **Freeboard** | Distance from the waterline to the main deck edge |
+
+---
+
+## Outputs
+
+A loading condition calculated with the Basic module produces:
+
+- **Stability summary** — GM, GZ curve plot, criteria check table (pass/fail)
+- **Strength summary** — Shear force and bending moment diagrams with permissible limit overlays
+- **Draught summary** — Fwd, mid, aft, trim, heel, displacement, deadweight
+- **Loading condition report** — Printable/exportable document suitable for port state control, class surveyors, and onboard records
