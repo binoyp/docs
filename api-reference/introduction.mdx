@@ -1,33 +1,41 @@
 ---
-title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+title: "API Reference"
+description: "Programmatic access to SecureLoad data and workflows"
 ---
 
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
+<Warning>
+  The SecureLoad API is currently under development and not yet publicly available.
+</Warning>
 
-## Welcome
+## Coming Soon
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+The SecureLoad REST API will allow you to integrate loading computer data and workflows directly into your own systems — vessel management platforms, ERP systems, port community systems, and custom tooling.
+
+## Planned Capabilities
+
+<CardGroup cols={2}>
+  <Card title="Loading Conditions" icon="scale-balanced">
+    Read and write loading conditions, including cargo, ballast, and stability results.
+  </Card>
+  <Card title="Vessel Data" icon="ship">
+    Access vessel hydrostatic data, tank tables, and approved loading manual parameters.
+  </Card>
+  <Card title="Plan Exchange" icon="arrows-left-right">
+    Submit and retrieve loading plans for ship–shore data exchange workflows.
+  </Card>
+  <Card title="Reports" icon="file-chart-column">
+    Generate and download stability reports and loading documentation programmatically.
+  </Card>
+</CardGroup>
+
+## Stay Updated
+
+API documentation will be published here once the API is released. In the meantime, contact us if you have integration requirements you would like to discuss.
 
 <Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
+  title="Contact Support"
+  icon="envelope"
+  href="mailto:support@secureload.com"
 >
-  View the OpenAPI specification file
+  Get in touch to discuss your integration needs.
 </Card>
-
-## Authentication
-
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
-
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```

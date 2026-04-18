@@ -1,0 +1,134 @@
+---
+title: "Loading Computer Shore"
+description: "One loading computer for the entire company, connected to every vessel"
+---
+
+Replace standalone desktop installations with a single cloud platform. One database, one ship model, real-time collaboration accessible from any browser. With Fleet Connect, the same data used onboard synchronises to shore — making the cloud version the connected hub for every department and every SecureLoad application.
+
+<Info>
+  Detailed feature documentation is being added progressively. This page covers the full product overview.
+</Info>
+
+<CardGroup cols={3}>
+  <Card title="Class Approved" icon="shield-check" />
+  <Card title="Runs Fully Offline Onboard" icon="wifi-slash" />
+  <Card title="Real-Time Monitoring" icon="gauge-high" />
+</CardGroup>
+
+---
+
+## The Problem
+
+<AccordionGroup>
+  <Accordion title="01 — Isolated installations, zero collaboration">
+    Shore teams use a locally installed copy of the loading computer on whatever PC they need. Everyone works individually — their own copy, their own data, their own results. There is no shared database.
+  </Accordion>
+  <Accordion title="02 — No single source of truth">
+    When every installation is standalone, there is no master record. Cargo libraries, loading templates, and stability results live on individual machines. If one person updates a plan, nobody else sees it.
+  </Accordion>
+  <Accordion title="03 — Shore and vessel are disconnected">
+    Plans created in the office cannot reach the vessel automatically. The crew re-enters data manually into the onboard system. There is no synchronisation.
+  </Accordion>
+  <Accordion title="04 — No fleet-wide visibility">
+    With each copy running independently, there is no way to see loading conditions across the fleet from one place. Every vessel and every user is a data silo.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## The Solution
+
+Loading Computer Shore replaces standalone desktop installations with a single cloud platform that the entire company shares. One database, one ship model, one version of the truth — accessible from any browser. When the port captain, the charterer, and the operations team open the same vessel, they see the same data and work on the same plan.
+
+| Feature | Existing Systems | Loading Computer Shore |
+|---|---|---|
+| Access | Installed on specific PCs | Accessible from anywhere with internet |
+| Database | Per-installation silos | Unified database for the entire fleet |
+| Collaboration | Individual, sequential | Real-time collaboration |
+| Access Control | None | Role-based access control |
+| Fleet Visibility | None | Real-time fleet loading visibility |
+| Cargo Library | Per-installation | Centralised cargo library |
+| Department Access | Technical team only | Cross-department collaboration |
+| Updates | Manual reinstallation | Continuous feature updates |
+| Vessel Sync | Manual file transfer | Auto-sync with Loading Computer Onboard |
+
+---
+
+## Under the Hood
+
+<CardGroup cols={2}>
+  <Card title="Cloud-Native Architecture" icon="cloud">
+    Runs on AWS with multi-region redundancy. Each organisation gets a dedicated company domain (`company.secureload.com`) with customer-selected data residency — Asia, Europe, or US. Linux-based, built for stability, reliability, and security. Access from any modern browser — no installation, no VPN, no desktop software.
+  </Card>
+  <Card title="Fleet-Wide Visibility & Sharing" icon="eye">
+    Every vessel in your fleet is accessible from one platform. Share access with charterers, surveyors, or consultancies with a single click — no need to recreate ship models or arrange separate licences.
+  </Card>
+  <Card title="Ship–Shore Synchronisation" icon="arrows-left-right">
+    Plans created in Loading Computer Shore synchronise directly to the onboard Loading Computer through Fleet Connect. The crew receives the approved plan ready to execute. Changes made onboard sync back.
+  </Card>
+  <Card title="Geometry-Based Licensing" icon="shapes">
+    Only vessel geometry is billed. Sister vessels share the same geometry at zero additional cost. Unlimited users per organisation.
+  </Card>
+</CardGroup>
+
+---
+
+## Modules
+
+### General Modules
+
+| Module | Description |
+|---|---|
+| **Basic** | Defines loading conditions; calculates intact stability and longitudinal strength |
+| **Ballast Distribution** | Determines optimal ballast tank filling levels using iterative optimisation |
+| **Trim Optimization** | Recommends optimal trim for a given loading condition |
+| **Online** | Real-time integration of tank level data via MODBUS communication |
+| **Hoppe Ballast Control** | Interfaces directly with ballast automation systems (powered by Hoppe Marine GmbH) |
+| **Damage Stability** | Performs stability and strength assessment for defined damage cases |
+
+### Vessel-Specific Modules
+
+| Module | Description |
+|---|---|
+| **General Cargo** | Loading/distribution of unitized cargo across holds and deck areas |
+| **Grain / Bulk Cargo** | Loading of dry bulk and grain cargoes; evaluates grain and bulk stability requirements |
+| **Container** | Container positioning, stowage planning, 3D & 2D visualization, BAPLIE data exchange |
+| **DNV Container Lashing** | Integrates DNV's StowLash solver directly into the SecureLoad workflow |
+| **Crane** | Simulation of cargo loading using single or tandem crane operations |
+| **Jack Up** | Jack-up vessel operations with interactive 3D visualisation and leg-load distribution solver |
+| **Float In / Float Off** | Float-in and float-off operations for floating docks and semi-submersible vessels |
+| **Load In / Load Out** | Continuous loading and discharge operations with tide and ballast calculations |
+| **Tanker** | Cargo volume and ullage reporting; ASTM and API table corrections |
+| **Car Carriers** | *(Seeking First Adopter)* Precise planning of Ro-Ro cargo operations |
+| **Inland Waters** | *(Seeking First Adopter)* Inland navigation vessels; ADN (2015) regulations |
+| **Gas Carrier** | *(Seeking First Adopter)* Gas dispersion areas, security zones, and monitoring regions |
+
+---
+
+## Deployment
+
+| Category | Details |
+|---|---|
+| **Platform** | Hosted on AWS, Linux-based, multi-region redundancy |
+| **User Access** | Dedicated company domain (`company.secureload.com`); customer-selected data residency (Asia, Europe, or US); role-based access control |
+| **Data Communication** | Secure, authorised synchronisation with onboard Loading Computer; secured, authenticated tunnels; full activity logs and audit trail |
+| **License** | Geometry-based — only geometry is billed; sister vessels share geometry at no additional cost; unlimited users per organisation |
+
+---
+
+## Class Approvals
+
+Loading Computer Shore is type-approved by leading classification societies. It stores the vessel's approved loading manual data and performs all calculations in line with class-approved limits, providing a fully auditable record for port state control and class surveys.
+
+---
+
+## Integration with the SecureLoad Ecosystem
+
+<CardGroup cols={2}>
+  <Card title="Stowage Planner Bulk" icon="boxes-stacked" href="https://new.secureload.com/products/stowage-planner-bulk">
+    Verified loading plans generated by Stowage Planner Bulk are passed into Loading Computer Shore for review and approval.
+  </Card>
+  <Card title="Fleet Connect" icon="arrows-left-right" href="https://new.secureload.com/products/fleet-connect">
+    Approved plans synchronise to the onboard Loading Computer through Fleet Connect. Actual conditions sync back to shore.
+  </Card>
+</CardGroup>
