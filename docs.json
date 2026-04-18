@@ -14,9 +14,24 @@
         "tab": "Solutions",
         "groups": [
           {
-            "group": "Loading Computer Onboard",
+            "group": "Loading Computer",
             "pages": [
-              "solutions/loading-computer-onboard/overview",
+              "solutions/loading-computer/overview",
+              {
+                "group": "Application",
+                "pages": [
+                  "solutions/loading-computer/application/interface-overview",
+                  "solutions/loading-computer/application/key-features"
+                ]
+              },
+              {
+                "group": "Operations",
+                "pages": [
+                  "solutions/loading-computer/operations/loading-and-discharge",
+                  "solutions/loading-computer/operations/ballast-operations",
+                  "solutions/loading-computer/operations/stability-verification"
+                ]
+              },
               {
                 "group": "Modules",
                 "pages": [
@@ -26,13 +41,20 @@
             ]
           },
           {
+            "group": "Loading Computer Onboard",
+            "pages": [
+              "solutions/loading-computer-onboard/overview"
+            ]
+          },
+          {
             "group": "Loading Computer Shore",
             "pages": [
               "solutions/loading-computer-shore/overview",
               {
-                "group": "Modules",
+                "group": "Cloud Features",
                 "pages": [
-                  "solutions/modules/basic"
+                  "solutions/loading-computer-shore/cloud-features/fleet-management",
+                  "solutions/loading-computer-shore/cloud-features/collaboration"
                 ]
               }
             ]
