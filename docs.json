@@ -37,24 +37,24 @@
                 "pages": [
                   "solutions/modules/basic"
                 ]
-              }
-            ]
-          },
-          {
-            "group": "Loading Computer Onboard",
-            "pages": [
-              "solutions/loading-computer-onboard/overview"
-            ]
-          },
-          {
-            "group": "Loading Computer Shore",
-            "pages": [
-              "solutions/loading-computer-shore/overview",
+              },
               {
-                "group": "Cloud Features",
+                "group": "Onboard",
                 "pages": [
-                  "solutions/loading-computer-shore/cloud-features/fleet-management",
-                  "solutions/loading-computer-shore/cloud-features/collaboration"
+                  "solutions/loading-computer-onboard/overview"
+                ]
+              },
+              {
+                "group": "Shore",
+                "pages": [
+                  "solutions/loading-computer-shore/overview",
+                  {
+                    "group": "Cloud Features",
+                    "pages": [
+                      "solutions/loading-computer-shore/cloud-features/fleet-management",
+                      "solutions/loading-computer-shore/cloud-features/collaboration"
+                    ]
+                  }
                 ]
               }
             ]
