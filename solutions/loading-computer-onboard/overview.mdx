@@ -17,85 +17,9 @@ Interactive 3D, advanced ballast optimisation, step-based workflows, and mesh-ba
 
 ---
 
-## The Problem
+# Modules
 
-<AccordionGroup>
-  <Accordion title="01 — Stuck on legacy technology">
-    Most onboard loading computers still run on outdated desktop applications with interfaces designed in the 1990s. They require dedicated workstations on the bridge, proprietary software installation, and are tied to specific hardware.
-  </Accordion>
-  <Accordion title="02 — No real operational workflows">
-    Traditional systems function as static verification tools. You enter a final condition and check whether it passes. There is no support for modelling the actual cargo operation step by step with stability verified at every intermediate stage.
-  </Accordion>
-  <Accordion title="03 — Ballast planning is still manual trial and error">
-    The crew enters ballast quantities by hand, checks whether stability passes, adjusts, checks again. For complex operations this iterative guessing can take hours and still produce suboptimal results.
-  </Accordion>
-  <Accordion title="04 — No connection between shore and vessel">
-    Loading plans created in the office cannot be sent directly to the onboard system. The crew re-enters everything manually.
-  </Accordion>
-</AccordionGroup>
-
----
-
-## What SecureLoad Adds Over Existing Systems
-
-| Feature | Traditional Systems | SecureLoad Onboard |
-|---|---|---|
-| Technology | Legacy desktop application | Latest web technologies |
-| Visualization | 2D diagrams | Interactive 3D |
-| Workflow | Final condition check only | Step-based operational workflow |
-| Ballast Calculation | Manual trial and error | Integrated optimisation algorithms |
-| Cargo Definition | Simple box approximation | Mesh-based cargo definition |
-| Cargo Templates | None | Cargo template library |
-| Access Control | Single user | Role-based access control |
-| Shore Plans | Manual re-entry | Auto-sync with office load plans |
-| Ballast Automation | Separate system | Native integration |
-
----
-
-## Real Scenarios
-
-<AccordionGroup>
-  <Accordion title="Heavy lift — verifying stability at every stage before the lift begins">
-    Model the entire crane operation step by step. Define the lift path, the load weight, the boom angle at each stage. The system calculates stability, strength, and heel at every point in the sequence.
-  </Accordion>
-  <Accordion title="Cargo weights differ from the shore plan">
-    The plan from shore arrives via Fleet Connect. Update the cargo weights directly in the system. Stability, strength, and drafts recalculate instantly.
-  </Accordion>
-  <Accordion title="Superintendent monitoring a float-in operation from the quayside">
-    Connect to the vessel's local network via Wi-Fi. Open a browser on your laptop or tablet. You have full access to the same loading computer interface the crew sees — live data, live 3D, live stability conditions. No installation required.
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Under the Hood
-
-<CardGroup cols={2}>
-  <Card title="Latest Web Technology" icon="globe">
-    A fully web-native loading computer. Runs inside a standard browser — Chrome, Firefox, Edge — without any local software installation. Served from a compact onboard hardware unit connected to the vessel's LAN. Multiple users can work simultaneously on the same worksheet.
-  </Card>
-  <Card title="Interactive 3D Visualisation" icon="cube">
-    The vessel, its tanks, holds, and cargo are rendered in full interactive 3D directly in the browser. Fill a ballast tank and see the waterline change. Reposition a cargo item and watch the stability curve update. The 3D view is fully synchronised with table-based inputs.
-  </Card>
-  <Card title="Step-Based Operational Workflow" icon="list-ol">
-    Model the entire operation as a sequence of steps — Load-In/Load-Out, Lift-On/Lift-Off, Float-In/Float-Out. Each step represents a discrete change and stability, longitudinal strength, and drafts are recalculated at every step.
-  </Card>
-  <Card title="Advanced Ballast Calculation" icon="sliders">
-    Integrated ballast optimisation engine. Users define target conditions and practical constraints. The solver iterates through feasible ballast distributions to find distributions that satisfy stability, strength, and draft requirements simultaneously.
-  </Card>
-  <Card title="Mesh-Based Cargo Definition" icon="vector-square">
-    Supports 3D mesh-based cargo definition. Instead of approximating a cargo item as a simple box, import the actual 3D mesh. The system derives volumes, centroids, and spatial envelopes directly from the geometry — essential for heavy lift, project cargo, and deck carriers.
-  </Card>
-  <Card title="Cargo Template Library" icon="layer-group">
-    A centralised cargo template library shared across the vessel. Common cargo items are stored as reusable templates with their geometry, weight ranges, and handling properties predefined.
-  </Card>
-</CardGroup>
-
----
-
-## Modules
-
-### General Modules
+## General Modules
 
 | Module | Description |
 |---|---|
@@ -106,7 +30,7 @@ Interactive 3D, advanced ballast optimisation, step-based workflows, and mesh-ba
 | **Hoppe Ballast Control** | Interfaces directly with ballast automation systems (powered by Hoppe Marine GmbH) |
 | **Damage Stability** | Performs stability and strength assessment for defined damage cases |
 
-### Vessel-Specific Modules
+## Vessel-Specific Modules
 
 | Module | Description |
 |---|---|
@@ -125,7 +49,7 @@ Interactive 3D, advanced ballast optimisation, step-based workflows, and mesh-ba
 
 ---
 
-## Deployment
+# Deployment
 
 | Category | Details |
 |---|---|
@@ -137,14 +61,3 @@ Interactive 3D, advanced ballast optimisation, step-based workflows, and mesh-ba
 
 ---
 
-## Integration with the SecureLoad Ecosystem
-
-Loading Computer Onboard works with **Fleet Connect** to receive approved plans from **Loading Computer Shore** in native format — no file conversion, no manual re-entry. Conditions created or modified onboard sync back to the cloud automatically.
-
-<Card
-  title="Fleet Connect"
-  icon="arrows-left-right"
-  href="https://new.secureload.com/products/fleet-connect"
->
-  Learn how Fleet Connect bridges the vessel and the office.
-</Card>
